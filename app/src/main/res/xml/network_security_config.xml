@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+    <!-- Production: HTTPS only -->
     <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">koleety.com</domain>
+        <domain includeSubdomains="true">mycolleg.com</domain>
         <domain includeSubdomains="true">koleety.manus.space</domain>
     </domain-config>
+    <!-- Default: no cleartext traffic -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
 </network-security-config>
